@@ -1,9 +1,8 @@
 FROM node:9.2.0-alpine
-WORKDIR /usr/src/app
-COPY package.json .
+COPY package.json /usr/src/app/
+WORKDIR /usr/src/app/
 RUN yarn
-COPY index.js .
-COPY config.json .
+COPY index.js udemy.js config.json /usr/src/app/
 RUN apk add --no-cache tzdata
 RUN cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
     && echo "Asia/Bangkok" > /etc/timezone \
