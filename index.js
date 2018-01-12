@@ -7,6 +7,7 @@ const url = require('url')
 
 const config = require('./config.json')
 const udemy = require('./udemy')
+const eduonix = require('./eduonix')
 
 const FEED_URL = 'http://www.onlinecoursesupdate.com/feeds/posts/default?alt=atom'
 
@@ -46,6 +47,9 @@ parser.on('readable', function () {
       switch (url.parse(courseURL).hostname) {
         case 'www.udemy.com':
           udemy.notify(item, courseURL)
+          break
+        case 'www.eduonix.com':
+          eduonix.notify(item, courseURL)
           break
       }
     }

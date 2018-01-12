@@ -2,7 +2,7 @@ FROM node:9.2.0-alpine
 COPY package.json /usr/src/app/
 WORKDIR /usr/src/app/
 RUN yarn
-COPY index.js udemy.js config.json /usr/src/app/
+COPY index.js udemy.js eduonix.js config.json /usr/src/app/
 RUN apk add --no-cache tzdata
 RUN cp /usr/share/zoneinfo/Asia/Bangkok /etc/localtime \
     && echo "Asia/Bangkok" > /etc/timezone \
