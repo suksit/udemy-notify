@@ -15,7 +15,7 @@ const notify = function (item, url) {
     const published = $('[data-purpose=last-update-date]').text().replace('ed', 'ed:').replace('\n', '').trim()
 
     config.tokens.forEach(function (token) {
-      const title = item.title.replace('Udemy - ', '')
+      const title = item.title
       const link = item['atom:link'].find(function (link) {
         return link['@'].rel === 'alternate'
       })['@'].href
